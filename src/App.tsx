@@ -21,6 +21,7 @@ const StyledButton = styled.button`
   color: #bf4f74;
   margin: 0 1em;
   padding: 0.25em 1em;
+  cursor: pointer;
 `;
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
           kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
           amet.
         </p>
-        <StyledButton>Some Button</StyledButton>
+        <StyledButton type="button">Some Button</StyledButton>
       </StyledContainer>
     </div>
   );
