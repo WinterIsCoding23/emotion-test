@@ -11,6 +11,8 @@ const paraStyle: SerializedStyles = css({
   marginRight: 10,
 });
 
+const styledComponent = styled.button<>;
+
 function App() {
   return (
     <div className="App">
