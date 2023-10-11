@@ -15,6 +15,18 @@ const paraStyle: SerializedStyles = css({
 function App() {
   const [showButton, setShowButton] = useState(false);
 
+  useEffect(() => {
+    const handleButtonVisibility = () => {
+      window.scrollY > 300 ? setShowButton(true) : setShowButton(false);
+    };
+
+    window.addEventListener("scroll", handleButtonVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", handleButtonVisibility);
+    };
+  }, []);
+
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
