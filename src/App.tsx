@@ -114,9 +114,11 @@ function App() {
           sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit
           amet. Lorem ipsum dolor sit amet, consetetur
         </p>
-        <StyledButton type="button" onClick={handleScrollToTop}>
-          Some Button
-        </StyledButton>
+        {showButton && (
+          <StyledButton type="button" onClick={handleScrollToTop}>
+            Some Button
+          </StyledButton>
+        )}
       </StyledContainer>
     </div>
   );
