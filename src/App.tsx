@@ -43,7 +43,15 @@ function App() {
   return (
     <div className="App">
       <StyledContainer>
-        <h2 css={{ color: "green", textAlign: "center" }}>Title</h2>
+        <h2
+          css={{
+            backgroundColor: "black",
+            color: "green",
+            textAlign: "center",
+          }}
+        >
+          Title
+        </h2>
         <p css={paraStyle}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -141,7 +149,7 @@ function App() {
           </StyledButton>
         )}
         <p>{score}</p>
-        <button type="button" onClick={increaseScore}>
+        <button type="button" css={{ marginRight: 20 }} onClick={increaseScore}>
           Increase Score
         </button>
         <button type="button" onClick={decreaseScore}>
