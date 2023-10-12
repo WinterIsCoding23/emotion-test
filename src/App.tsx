@@ -13,7 +13,7 @@ const paraStyle: SerializedStyles = css({
 });
 
 function App() {
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState<boolean>(false);
 
   useEffect(() => {
     const handleButtonVisibility = () => {
@@ -27,7 +27,7 @@ function App() {
     };
   }, []);
 
-  const handleScrollToTop = () => {
+  const handleScrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
