@@ -1,6 +1,6 @@
 // import React from "react";
 import { css, SerializedStyles } from "@emotion/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEventHandler } from "react";
 import StyledButton from "./styledComponents/StyledButton";
 import StyledContainer from "./styledComponents/StyledContainer";
 import "./App.css";
@@ -14,6 +14,7 @@ const paraStyle: SerializedStyles = css({
 
 function App() {
   const [showButton, setShowButton] = useState<boolean>(false);
+  let [score, setScore] = useState<number>(0);
 
   useEffect(() => {
     const handleButtonVisibility = () => {
@@ -31,7 +32,13 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const; 
+  const increaseScore: MouseEventHandler<HTMLButtonElement> = () => {
+    setScore(score + 1);
+  };
+
+  const decreaseScore: MouseEventHandler<HTMLButtonElement> = () => {
+    setScore(score - 1);
+  };
 
   return (
     <div className="App">
@@ -133,7 +140,13 @@ function App() {
             Go to Top
           </StyledButton>
         )}
-        <button type="button">Another button</button>
+        <p>{score}</p>
+        <button type="button" onClick={increaseScore}>
+          Increase Score
+        </button>
+        <button type="button" onClick={decreaseScore}>
+          Decrease Score
+        </button>
       </StyledContainer>
     </div>
   );
