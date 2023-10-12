@@ -31,6 +31,8 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const; 
+
   return (
     <div className="App">
       <StyledContainer>
@@ -128,9 +130,10 @@ function App() {
         </p>
         {showButton && (
           <StyledButton type="button" onClick={handleScrollToTop}>
-            Some Button
+            Go to Top
           </StyledButton>
         )}
+        <button type="button">Another button</button>
       </StyledContainer>
     </div>
   );
