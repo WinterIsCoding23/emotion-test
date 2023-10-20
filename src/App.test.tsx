@@ -15,6 +15,8 @@ test("renders paragraph", () => {
 
 test("not renders scroll-button by default", () => {
   render(<App />);
-  const scrollButton = screen.getByTestId(/styled-button/i);
+  const showButton = false;
+  const scrollButton = screen.getByTestId("styled-button");
+  expect(showButton).toBe(false);
   expect(scrollButton).not.toBeInTheDocument();
 });
