@@ -1,9 +1,29 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders heading", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const heading = screen.getByRole(/heading/i);
+  expect(heading).toBeInTheDocument();
+});
+
+test("renders paragraph", () => {
+  render(<App />);
+  const paragraph = screen.getByText(/lorem ipsum/i);
+  expect(paragraph).toBeInTheDocument();
+});
+
+// fails because cannot find scrollButton-element
+test("not renders scroll-button by default", () => {
+  render(<App />);
+  const showButton = false;
+  const scrollButton = screen.getByTestId("styled-button");
+  expect(showButton).toBe(false);
+  expect(scrollButton).not.toBeInTheDocument();
+});
+
+test("renders score correctly dependend on useState", () => {
+  render(<App />);
+  const secondParagraph = screen.getByTestId(/score-paragraph/i);
+  expect(secondParagraph).toBeInTheDocument();
 });
