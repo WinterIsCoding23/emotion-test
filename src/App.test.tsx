@@ -13,6 +13,7 @@ test("renders paragraph", () => {
   expect(paragraph).toBeInTheDocument();
 });
 
+// fails because cannot find scrollButton-element
 test("not renders scroll-button by default", () => {
   render(<App />);
   const showButton = false;
