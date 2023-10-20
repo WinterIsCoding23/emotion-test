@@ -152,7 +152,7 @@ function App() {
             Go to Top
           </StyledButton>
         )}
-        <p>{score}</p>
+        <p data-testid="score-paragraph">{score}</p>
         <button type="button" css={{ marginRight: 20 }} onClick={increaseScore}>
           Increase Score
         </button>

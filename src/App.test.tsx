@@ -21,3 +21,9 @@ test("not renders scroll-button by default", () => {
   expect(showButton).toBe(false);
   expect(scrollButton).not.toBeInTheDocument();
 });
+
+test("renders score correctly dependend on useState", () => {
+  render(<App />);
+  const secondParagraph = screen.getByTestId(/score-paragraph/i);
+  expect(secondParagraph).toBeInTheDocument();
+});
