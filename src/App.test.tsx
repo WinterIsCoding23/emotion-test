@@ -12,3 +12,9 @@ test("renders paragraph", () => {
   const paragraph = screen.getByText(/lorem ipsum/i);
   expect(paragraph).toBeInTheDocument();
 });
+
+test("not renders scroll-button by default", () => {
+  render(<App />);
+  const scrollButton = screen.getByTestId(/styled-button/i);
+  expect(scrollButton).not.toBeInTheDocument();
+});

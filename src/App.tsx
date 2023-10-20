@@ -144,7 +144,11 @@ function App() {
           amet. Lorem ipsum dolor sit amet, consetetur
         </p>
         {showButton && (
-          <StyledButton type="button" onClick={handleScrollToTop}>
+          <StyledButton
+            type="button"
+            onClick={handleScrollToTop}
+            data-testid="styled-button"
+          >
             Go to Top
           </StyledButton>
         )}
